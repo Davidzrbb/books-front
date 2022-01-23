@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { NavComponent } from './nav/nav.component';
     NavComponent
   ],
   imports: [
-   BrowserModule, FormsModule, AppRoutingModule, MatTabsModule, BrowserAnimationsModule
+   BrowserModule, FormsModule, AppRoutingModule, MatTabsModule, BrowserAnimationsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
