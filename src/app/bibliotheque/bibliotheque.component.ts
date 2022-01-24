@@ -10,6 +10,8 @@
 })
 export class BibliothequeComponent implements OnInit {
 posts : any;
+
+
 constructor(private bookServiceService: BookServiceService) { }
 
  ngOnInit() {
@@ -17,5 +19,7 @@ constructor(private bookServiceService: BookServiceService) { }
  	(response) => { this.posts = response; },
  	(error) => { console.log(error); });
  }
+
+ headElements = ['ID', 'First', 'Last', 'Handle'];
 
 }

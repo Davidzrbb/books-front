@@ -6,10 +6,9 @@ import { BibliothequeComponent } from './bibliotheque/bibliotheque.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material/tabs';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from  '@angular/common/http';
-
+import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,7 @@ import { HttpClientModule } from  '@angular/common/http';
     NavComponent
   ],
   imports: [
-   BrowserModule, FormsModule, AppRoutingModule, MatTabsModule, BrowserAnimationsModule,HttpClientModule
+   BrowserModule, FormsModule, AppRoutingModule, BrowserAnimationsModule,HttpClientModule,MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

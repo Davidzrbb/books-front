@@ -1,8 +1,32 @@
-<div>
-  <li *ngFor="let post of posts">
+<form class="example-form">
+<div class="search-bar">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search Isbn... 🔍</mat-label>
+    <input matInput>
 
-         <span style="font-size: 20px;text-align: center;">{{post.title}}
-          </span>
+  </mat-form-field>
 
-  </li>
 </div>
+</form>
+<button class="example-full-width btn-search" mat-raised-button color="primary">GO</button>
+<br><br><br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Isbn</th>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
+    <th scope="col">Overview</th>
+    <th scope="col">Read_count</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of posts; index as i">
+    <th scope="row"> {{ country.isbn }}</th>
+    <td>{{ country.title }}</td>
+    <td>{{ country.author }}</td>
+    <td>{{ country.overview }}</td>
+    <td>{{ country.read_count }}</td>
+  </tr>
+  </tbody>
+</table>
