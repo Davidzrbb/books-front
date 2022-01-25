@@ -17,3 +17,11 @@ text-align:center;
 .btn-search{
 margin-top:10px;
 }
+.supp{
+font-size: 150%;
+color:red;
+cursor:pointer;
+}
+.supp:hover{
+font-size: 200%;
+}

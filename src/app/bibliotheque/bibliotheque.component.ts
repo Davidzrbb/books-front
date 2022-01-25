@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BookServiceService} from '../service/book-service.service'
 import{Livre} from '../bibliotheque/livre'
 import { Observable } from 'rxjs';
-import {MatDialog} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-bibliotheque',
   templateUrl: './bibliotheque.component.html',
@@ -16,7 +16,7 @@ public popup = false;
 public valSearch="";
 
 
-constructor(private bookServiceService: BookServiceService,public dialog: MatDialog) { }
+constructor(private bookServiceService: BookServiceService) { }
 
  ngOnInit() {
  this.popup = false;
@@ -38,12 +38,18 @@ constructor(private bookServiceService: BookServiceService,public dialog: MatDia
     }
     },
     (error) => { console.log(error);
-    console.log("ohoh");
     });
-
   }
     onKey(event: any) {
       this.valSearch = event.target.value;
     }
+
+    deleteBook(isbn:string){
+     	this.bookServiceService.deleteBook(isbn).subscribe(
+     	(data) => { 	this.ngOnInit();},
+     	(error) => { console.log(error); });
+
+     }
+
 
 }

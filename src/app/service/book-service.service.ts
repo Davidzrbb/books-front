@@ -17,5 +17,9 @@ export class BookServiceService {
   getPostsIsbn(isbn : string):Observable<any> {
   	return this.http.get<any>(this.url+isbn);
   }
+
+  deleteBook(isbn : string):Observable<any> {
+     return this.http.delete<any>(this.url+isbn);
+  }
 }
 

@@ -28,6 +28,7 @@
       <td>{{ post.author }}</td>
       <td>{{ post.overview }}</td>
       <td>{{ post.read_count }}</td>
+      <td class="supp" (click)="deleteBook(post.isbn)">&#10008;</td>
     </tr>
     </tbody>
   </table>
@@ -51,6 +52,7 @@
       <td>{{ search.author }}</td>
       <td>{{ search.overview }}</td>
       <td>{{ search.read_count }}</td>
+      <td class="supp" (click)="deleteBook(search.isbn)">&#10008;</td>
     </tr>
     </tbody>
   </table>
