@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { MaterialModule } from './material.module';
+import { AddBookComponent } from './add-book/add-book.component';
 @NgModule({
   declarations: [
     AppComponent,
     BibliothequeComponent,
     ConnexionComponent,
-    NavComponent
+    NavComponent,
+    AddBookComponent
   ],
   imports: [
    BrowserModule, FormsModule, AppRoutingModule, BrowserAnimationsModule,HttpClientModule,MaterialModule

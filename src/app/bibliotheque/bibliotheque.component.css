@@ -25,3 +25,12 @@ cursor:pointer;
 .supp:hover{
 font-size: 200%;
 }
+
+.modify{
+cursor:pointer;
+font-size:25px;
+}
+
+.modify:hover{
+font-size:35px;
+}

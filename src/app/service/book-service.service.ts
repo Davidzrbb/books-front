@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class BookServiceService {
 
   private url = 'http://localhost:8080/api/book/';
+  private urlPatch = 'http://localhost:8080/api/update/';
   constructor(private http: HttpClient){ }
   getPosts():Observable<any> {
   	return this.http.get<any>(this.url);
@@ -21,5 +22,9 @@ export class BookServiceService {
   deleteBook(isbn : string):Observable<any> {
      return this.http.delete<any>(this.url+isbn);
   }
+
+    patchBookService(patchList):Observable<any> {
+       return this.http.patch<any>(this.urlPatch+patchList[0],patchList[1]);
+    }
 }
 

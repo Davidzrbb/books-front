@@ -10,7 +10,7 @@
 <button class="example-full-width btn-search" mat-raised-button color="primary" (click)="searchIsbn()">GO
 </button>
 <br><br><br>
-<div *ngIf="!popup">
+<div *ngIf="!popup && !modify">
   <table class="table table-striped">
     <thead>
     <tr>
@@ -23,18 +23,18 @@
     </thead>
     <tbody>
     <tr *ngFor="let post of posts ">
-      <th scope="row"> {{ post.isbn }}</th>
+      <td><strong>{{ post.isbn }}</strong></td>
       <td>{{ post.title }}</td>
       <td>{{ post.author }}</td>
       <td>{{ post.overview }}</td>
-      <td>{{ post.read_count }}</td>
+      <td>{{ post.readCount }}</td>
+      <td class="modify" (click)="modifyBook(post.isbn)">🖉</td>
       <td class="supp" (click)="deleteBook(post.isbn)">&#10008;</td>
     </tr>
     </tbody>
   </table>
 </div>
 <div *ngIf="popup">
-
   <table class="table table-striped">
     <thead>
     <tr>
@@ -51,7 +51,8 @@
       <td>{{ search.title }}</td>
       <td>{{ search.author }}</td>
       <td>{{ search.overview }}</td>
-      <td>{{ search.read_count }}</td>
+      <td>{{ search.readCount }}</td>
+      <td class="modify" (click)="modifyBook(search.isbn)">🖉</td>
       <td class="supp" (click)="deleteBook(search.isbn)">&#10008;</td>
     </tr>
     </tbody>
@@ -61,3 +62,30 @@
   </div>
 </div>
 
+
+<div *ngIf="modify && !popup">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Isbn</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Overview</th>
+      <th scope="col">Read_count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><strong><input value="{{ search.isbn }}" id="isbn" name="isbn" #isbn></strong></td>
+      <td><input value="{{ search.title }}" id="title" name="title"#title></td>
+      <td><input value="{{ search.author }}" id="author" name="author"#author></td>
+      <td><input value="{{ search.overview }}" id="overview" name="overview"#overview></td>
+      <td><input value="{{ search.readCount }}" id="read_count" name="read_count"#read_count></td>
+      <td class="supp" style="color:green" (click)="patchBook(isbn.value,title.value,author.value,overview.value,read_count.value)">✔</td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="text-align:center;">
+    <button mat-raised-button color="primary" (click)="ngOnInit()">Back</button>
+  </div>
+</div>
