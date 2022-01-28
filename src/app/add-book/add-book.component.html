@@ -1,20 +1,38 @@
 <div style="">
   <h1 style="text-align:center;">Add a book</h1>
+  <br><br>
   <div class="form-style">
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-      <mat-label>Enter some input</mat-label>
-      <input matInput #input maxlength="10" placeholder="Ex. Nougat">
-      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    <mat-form-field hintLabel="Max 8 characters" appearance="fill">
+      <mat-label>Isbn</mat-label>
+      <input matInput #Isbn maxlength="8">
+      <mat-hint align="end">{{Isbn.value?.length || 0}}/8</mat-hint>
     </mat-form-field>
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-      <mat-label>Enter some input</mat-label>
-      <input matInput #input maxlength="10" placeholder="Ex. Nougat">
-      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput #Title>
     </mat-form-field>
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-      <mat-label>Enter some input</mat-label>
-      <input matInput #input maxlength="10" placeholder="Ex. Nougat">
-      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    <mat-form-field appearance="fill">
+      <mat-label>Author</mat-label>
+      <input matInput #Author>
     </mat-form-field>
+  </div>
+<br><br>
+  <div class="form-style" >
+    <mat-form-field appearance="fill" >
+      <mat-label>Overview</mat-label>
+      <input matInput #Overview>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Read_count</mat-label>
+      <input  matInput #Read_count>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Picture</mat-label>
+      <input  matInput #Picture>
+    </mat-form-field>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <button style="text-align:center;"mat-raised-button color="primary" (click)="saveBook(Isbn.value,Title.value,Author.value,Overview.value,Read_count.value,Picture.value)">Save</button>
   </div>
 </div>

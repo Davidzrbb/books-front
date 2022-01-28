@@ -26,5 +26,6 @@ export class BookServiceService {
     patchBookService(patchList):Observable<any> {
        return this.http.patch<any>(this.urlPatch+patchList[0],patchList[1]);
     }
+
 }
 
