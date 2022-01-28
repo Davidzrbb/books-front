@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+}
+
+.search-bar{
+text-align:center;
+}
+.example-form {
+ height:65px;
+  width: 100%;
+}
+.example-full-width {
+text-align:center;
+  width: 100%;
+  font-size:150%
+}
+.btn-search{
+margin-top:10px;
+}
+.supp{
+font-size: 150%;
+color:red;
+cursor:pointer;
+}
+.supp:hover{
+font-size: 200%;
+}
+
+.modify{
+cursor:pointer;
+font-size:25px;
+}
+
+.modify:hover{
+font-size:35px;
+}

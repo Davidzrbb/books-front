@@ -1,0 +1,5 @@
+.form-style{
+display:flex;
+flow-direction:row;
+justify-content: space-around;
+}
