@@ -92,7 +92,7 @@ constructor(private bookServiceService: BookServiceService,private http: HttpCli
       readCount: readCount
     };
 console.log(scores.bill)
-        this.http.patch('http://localhost:8080/api/update/'+isbn,scores.bill).subscribe(
+        this.http.patch('http://localhost:8080/api/book/'+isbn,scores.bill).subscribe(
               res => {
                 console.log('received ok response from patch request');
                 this.ngOnInit();
